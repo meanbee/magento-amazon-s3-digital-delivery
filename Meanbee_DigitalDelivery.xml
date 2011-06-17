@@ -5,7 +5,7 @@
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-                <Mage_Sales />
+                <Mage_Catalog />
             </depends>
         </Meanbee_DigitalDelivery>
     </modules>
