@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Meanbee_DigitalDelivery>
+            <version>1.0.0</version>
+        </Meanbee_DigitalDelivery>
+    </modules>
+    <global>
+        <models>
+            <mb_dd>
+                <class>Meanbee_DigitalDelivery_Model</class>
+            </mb_dd>
+        </models>
+        <blocks>
+            <mb_dd>
+                <class>Meanbee_DigitalDelivery_Block</class>
+            </mb_dd>
+        </blocks>
+        <helpers>
+            <mb_dd>
+                <class>Meanbee_DigitalDelivery_Helper</class>
+            </mb_dd>
+        </helpers>
+    </global>
+</config>
