@@ -7,19 +7,47 @@
     </modules>
     <global>
         <models>
-            <mb_dd>
+            <mbdd>
                 <class>Meanbee_DigitalDelivery_Model</class>
-            </mb_dd>
+            </mbdd>
         </models>
         <blocks>
-            <mb_dd>
+            <mbdd>
                 <class>Meanbee_DigitalDelivery_Block</class>
-            </mb_dd>
+            </mbdd>
         </blocks>
         <helpers>
-            <mb_dd>
+            <mbdd>
                 <class>Meanbee_DigitalDelivery_Helper</class>
-            </mb_dd>
+            </mbdd>
         </helpers>
     </global>
+    <adminhtml>
+        <acl>
+            <resources>
+                <admin>
+                    <children>
+                        <system>
+                            <children>
+                                <config>
+                                    <children>
+                                        <mbdd>
+                                            <title>Meanbee Digital Delivery Settings</title>
+                                        </mbdd>
+                                    </children>
+                                </config>
+                            </children>
+                        </system>
+                    </children>
+                </admin>
+            </resources>
+        </acl>
+        <layout>
+            <updates>
+                <mbdd>
+                    <file>meanbee/digitaldelivery.xml</file>
+                </mbdd>
+            </updates>
+        </layout>
+    </adminhtml>
 </config>
