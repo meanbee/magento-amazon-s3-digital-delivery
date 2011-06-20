@@ -10,11 +10,6 @@
             <S3QSA>
                 <class>Meanbee_S3QSA_Model</class>
             </S3QSA>
-            <downloadable>
-                <rewrite>
-                    <link_purchased_item>Meanbee_S3QSA_Model_Link_Purchased_Item</link_purchased_item>
-                </rewrite>
-            </downloadable>
         </models>
         <blocks>
             <S3QSA>
@@ -65,7 +60,7 @@
                                 <config>
                                     <children>
                                         <s3qsa>
-                                            <title>Meanbee Digital Delivery Settings</title>
+                                            <title>Meanbee S3 Downloads Settings</title>
                                         </s3qsa>
                                     </children>
                                 </config>
@@ -83,4 +78,14 @@
             </updates>
         </layout>
     </adminhtml>
+    <default>
+        <s3qsa>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <aws>
+                <request_timeout>300</request_timeout>
+            </aws>
+        </s3qsa>
+    </default>
 </config>
