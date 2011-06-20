@@ -27,15 +27,15 @@
             </S3QSA>
         </helpers>
         <events>
-            <downloadable_link_purchased_item_load_after>
+            <admin_system_config_changed_section_s3qsa>
                 <observers>
-                    <meanbee_digitaldelivery_modify_url>
+                    <s3qsa_config_change>
                         <type>singleton</type>
-                        <class>s3qsa/observer</class>
-                        <method>observeLoad</method>
-                    </meanbee_digitaldelivery_modify_url>
+                        <class>S3QSA/observer</class>
+                        <method>observeConfigChange</method>
+                    </s3qsa_config_change>
                 </observers>
-            </downloadable_link_purchased_item_load_after>
+            </admin_system_config_changed_section_s3qsa>
         </events>
         <rewrite>
             <mbdd_download>
