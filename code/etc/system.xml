@@ -28,6 +28,7 @@
                             <show_in_store>1</show_in_store>
                             <comment>If you disable digital delivery, this module will not be used to provide your customers with links to the available content.</comment>
                         </enabled>
+                        <!--
                         <provider>
                             <label>Third-party Service</label>
                             <frontend_type>select</frontend_type>
@@ -38,6 +39,7 @@
                             <show_in_store>1</show_in_store>
                             <comment>On what platform are your files hosted?  We'll use this to decide which of the configuration options below to follow.</comment>
                         </provider>
+                        -->
                     </fields>
                 </general>
                 <aws translate="label">
@@ -66,15 +68,6 @@
                             <show_in_store>1</show_in_store>
                             <comment>Each Access Key ID has a Secret Access Key associated with it. This key is just a long string of characters that you use to calculate the digitalsignature that you include in the request.</comment>
                         </secret_key>
-                        <urls translate="label">
-                            <label>Amazon URLs</label>
-                            <frontend_type>text</frontend_type>
-                            <sort_order>30</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <comment><![CDATA[A comma-separated list of hostnames used for hosting files at amazon.  For example, <tt>http://cdn.meanbee.com/products/myfile.mov</tt> would require <tt>cdn.meanbee.com</tt> above.]]></comment>
-                        </urls>
                         <request_timeout translate="label">
                             <label>Request Timeout</label>
                             <frontend_type>text</frontend_type>

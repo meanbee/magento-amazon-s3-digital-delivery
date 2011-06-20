@@ -1,12 +1,19 @@
-<script type="text/javascript">
-<!--
-;(function() {
-    var amazon_urls = <?php echo $this->getAmazonUrls() ?>;
-    var is_downloadable_product = !!$('product_info_tabs_downloadable_items');
+<?php if (Mage::helper('mbdd/config')->isEnabled()): ?>
+    <?php $message = $this->__('<strong>Note: </strong> Any URLs of the form http://*.s3.amazonaws.com will be automatically secured with time-sensitive URLs upon downloading by the customer.'); ?>
+    <script type="text/javascript">
+    <!--
+    ;(function() {
+        var is_downloadable_product = !!$('product_info_tabs_downloadable_items');
 
-    if (is_downloadable_product) {
-        var protected_download_elements = $$('input.validate-downloadable-url');
-    }
-})();
--->
-</script>
+        if (is_downloadable_product) {
+            // These are the messages beneath the downloadable URL product adds
+            $$('.hor-scroll small').each(function (el) {
+                el.insert({
+                    bottom: '<br /><?php echo $message ?>'
+                });
+            });
+        }
+    })();
+    -->
+    </script>
+<?php endif ?>
