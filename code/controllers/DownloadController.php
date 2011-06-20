@@ -4,8 +4,8 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
     protected function _processDownload($url, $resourceType) {
         $config = Mage::helper('S3QSA/config');
         $s3     = Mage::helper('S3QSA/S3');
-        
-        if ($config->isEnabled()) {
+
+        if ($config->isEnabled() && $config->isConfigured()) {
             if ($resourceType == Mage_Downloadable_Helper_Download::LINK_TYPE_URL) {
                 if ($s3->isRelevantUrl($url)) {
 

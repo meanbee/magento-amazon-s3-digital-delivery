@@ -16,6 +16,9 @@ class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
         return $this->_getStoreConfigFlag(self::XML_GENERAL_ENABLED);
     }
 
+    /**
+     * @return bool
+     */
     public function isConfigured() {
         return $this->getAmazonAccessKey() && $this->getAmazonSecretKey();
     }

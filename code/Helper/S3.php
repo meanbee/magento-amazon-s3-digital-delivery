@@ -41,7 +41,7 @@ class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
         $expiry = Mage::helper('S3QSA/config')->getAmazonRequestTimeout();
 
         if ($expiry < 1) {
-            $expiry = ;
+            $expiry = 1;
         }
 
         return time() + $expiry;
