@@ -75,6 +75,15 @@
                             <show_in_store>1</show_in_store>
                             <comment><![CDATA[A comma-separated list of hostnames used for hosting files at amazon.  For example, <tt>http://cdn.meanbee.com/products/myfile.mov</tt> would require <tt>cdn.meanbee.com</tt> above.]]></comment>
                         </urls>
+                        <request_timeout translate="label">
+                            <label>Request Timeout</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>30</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                            <comment>A brand spankin' new URL is used every time someone wants to download a file hosted in one of your S3 buckets.  This URL is time sensitive.  This value provides the number of seconds for which the URL is valid.</comment>
+                        </request_timeout>
                     </fields>
                 </aws>
             </groups>

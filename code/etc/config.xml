@@ -37,7 +37,24 @@
                 </observers>
             </downloadable_link_purchased_item_load_after>
         </events>
+        <rewrite>
+            <mbdd_download>
+                <from><![CDATA[#^/downloadable/download/link/#]]></from>
+                <to>/mbdd/download/link/</to>
+            </mbdd_download>
+        </rewrite>
     </global>
+    <frontend>
+        <routers>
+            <mbdd_download>
+                <use>standard</use>
+                <args>
+                    <module>Meanbee_DigitalDelivery</module>
+                    <frontName>mbdd</frontName>
+                </args>
+            </mbdd_download>
+        </routers>
+    </frontend>
     <adminhtml>
         <acl>
             <resources>

@@ -6,6 +6,7 @@ class Meanbee_DigitalDelivery_Helper_Config extends Mage_Core_Helper_Abstract {
     const XML_AMAZON_ACCESS     = 'mbdd/aws/access_key';
     const XML_AMAZON_SECRET     = 'mbdd/aws/secret_key';
     const XML_AMAZON_URLS       = 'mbdd/aws/urls';
+    const XML_AMAZON_TIMEOUT    = 'mbdd/aws/request_timeout';
 
     /**
      * Is the complete module enabled
@@ -50,6 +51,10 @@ class Meanbee_DigitalDelivery_Helper_Config extends Mage_Core_Helper_Abstract {
         }
 
         return array();
+    }
+
+    public function getAmazonRequestTimeout() {
+        return $this->_getStoreConfig(self::XML_AMAZON_TIMEOUT);
     }
 
     /**
