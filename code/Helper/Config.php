@@ -1,12 +1,12 @@
 <?php
-class Meanbee_DigitalDelivery_Helper_Config extends Mage_Core_Helper_Abstract {
-    const XML_GENERAL_ENABLED   = 'mbdd/general/enabled';
-    const XML_GENERAL_PROVIDER  = 'mbdd/general/provider';
+class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
+    const XML_GENERAL_ENABLED   = 's3qsa/general/enabled';
+    const XML_GENERAL_PROVIDER  = 's3qsa/general/provider';
 
-    const XML_AMAZON_ACCESS     = 'mbdd/aws/access_key';
-    const XML_AMAZON_SECRET     = 'mbdd/aws/secret_key';
-    const XML_AMAZON_URLS       = 'mbdd/aws/urls';
-    const XML_AMAZON_TIMEOUT    = 'mbdd/aws/request_timeout';
+    const XML_AMAZON_ACCESS     = 's3qsa/aws/access_key';
+    const XML_AMAZON_SECRET     = 's3qsa/aws/secret_key';
+    const XML_AMAZON_URLS       = 's3qsa/aws/urls';
+    const XML_AMAZON_TIMEOUT    = 's3qsa/aws/request_timeout';
 
     /**
      * Is the complete module enabled

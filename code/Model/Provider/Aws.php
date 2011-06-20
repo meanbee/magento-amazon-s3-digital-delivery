@@ -1,5 +1,5 @@
 <?php
-class Meanbee_DigitalDelivery_Model_Provider_Aws extends Meanbee_DigitalDelivery_Model_Provider_Abstract {
+class Meanbee_S3QSA_Model_Provider_Aws extends Meanbee_DigitalDelivery_Model_Provider_Abstract {
     protected $_service = null;
 
     public function isConfigured() {

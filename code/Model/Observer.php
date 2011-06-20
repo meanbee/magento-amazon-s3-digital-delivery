@@ -1,5 +1,5 @@
 <?php
-class Meanbee_DigitalDelivery_Model_Observer {
+class Meanbee_S3QSA_Model_Observer {
     /**
      * Called when downloadable_link_purchased_item_load_after is called.
      *

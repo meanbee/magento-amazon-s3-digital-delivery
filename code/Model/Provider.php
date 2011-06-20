@@ -1,5 +1,5 @@
 <?php
-class Meanbee_DigitalDelivery_Model_Provider {
+class Meanbee_S3QSA_Model_Provider {
     /**
      * Return the model of the currently selected provider
      *
@@ -9,7 +9,7 @@ class Meanbee_DigitalDelivery_Model_Provider {
         $provider = $this->_getConfig()->getProvider();
 
         if (!empty($provider)) {
-            return Mage::getSingleton("mbdd/$provider");
+            return Mage::getSingleton("S3QSA/$provider");
         } else {
             Mage::exception(
                 "Meanbee_DigitalDelivery",
@@ -22,6 +22,6 @@ class Meanbee_DigitalDelivery_Model_Provider {
      * @return Meanbee_DigitalDelivery_Helper_Config
      */
     protected function _getConfig() {
-        return Mage::helper('mbdd/config');
+        return Mage::helper('S3QSA/config');
     }
 }

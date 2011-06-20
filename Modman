@@ -1,4 +1,4 @@
-code                                        app/code/community/Meanbee/DigitalDelivery
-Meanbee_DigitalDelivery.xml                 app/etc/modules/Meanbee_DigitalDelivery.xml
+code                                        app/code/community/Meanbee/S3QSA
+Meanbee_S3QSA.xml                           app/etc/modules/Meanbee_S3QSA.xml
 design/adminhtml/layout/meanbee/*           app/design/adminhtml/default/default/layout/meanbee
 design/adminhtml/template/meanbee/*         app/design/adminhtml/default/default/template/meanbee

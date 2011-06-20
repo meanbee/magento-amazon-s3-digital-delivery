@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Meanbee_DigitalDelivery>
+        <Meanbee_S3QSA>
             <version>1.0.0</version>
-        </Meanbee_DigitalDelivery>
+        </Meanbee_S3QSA>
     </modules>
     <global>
         <models>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Model</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Model</class>
+            </S3QSA>
             <downloadable>
                 <rewrite>
-                    <link_purchased_item>Meanbee_DigitalDelivery_Model_Link_Purchased_Item</link_purchased_item>
+                    <link_purchased_item>Meanbee_S3QSA_Model_Link_Purchased_Item</link_purchased_item>
                 </rewrite>
             </downloadable>
         </models>
         <blocks>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Block</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Block</class>
+            </S3QSA>
         </blocks>
         <helpers>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Helper</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Helper</class>
+            </S3QSA>
         </helpers>
         <events>
             <downloadable_link_purchased_item_load_after>
                 <observers>
                     <meanbee_digitaldelivery_modify_url>
                         <type>singleton</type>
-                        <class>mbdd/observer</class>
+                        <class>s3qsa/observer</class>
                         <method>observeLoad</method>
                     </meanbee_digitaldelivery_modify_url>
                 </observers>
@@ -40,19 +40,19 @@
         <rewrite>
             <mbdd_download>
                 <from><![CDATA[#^/downloadable/download/link/#]]></from>
-                <to>/mbdd/download/link/</to>
+                <to>/s3qsa/download/link/</to>
             </mbdd_download>
         </rewrite>
     </global>
     <frontend>
         <routers>
-            <mbdd_download>
+            <s3qsa_download>
                 <use>standard</use>
                 <args>
-                    <module>Meanbee_DigitalDelivery</module>
-                    <frontName>mbdd</frontName>
+                    <module>Meanbee_S3QSA</module>
+                    <frontName>s3qsa</frontName>
                 </args>
-            </mbdd_download>
+            </s3qsa_download>
         </routers>
     </frontend>
     <adminhtml>
@@ -64,9 +64,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <mbdd>
+                                        <s3qsa>
                                             <title>Meanbee Digital Delivery Settings</title>
-                                        </mbdd>
+                                        </s3qsa>
                                     </children>
                                 </config>
                             </children>
@@ -77,9 +77,9 @@
         </acl>
         <layout>
             <updates>
-                <mbdd>
-                    <file>meanbee/digitaldelivery.xml</file>
-                </mbdd>
+                <s3qsa>
+                    <file>meanbee/s3qsa.xml</file>
+                </s3qsa>
             </updates>
         </layout>
     </adminhtml>

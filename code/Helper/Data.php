@@ -1,5 +1,5 @@
 <?php
-class Meanbee_DigitalDelivery_Helper_Data extends Mage_Core_Helper_Abstract {
+class Meanbee_S3QSA_Helper_Data extends Mage_Core_Helper_Abstract {
     public function isRelevantUrl($url) {
         preg_match_all("/^http:\/\/(.*)\.s3\.amazonaws\.com\/(.*)$/", $url, $matches);
 
@@ -7,7 +7,7 @@ class Meanbee_DigitalDelivery_Helper_Data extends Mage_Core_Helper_Abstract {
     }
 
     public function generateSecureUrl($url) {
-        $secret = Mage::helper('mbdd/config')->getAmazonSecretKey();
+        $secret = Mage::helper('S3QSA/config')->getAmazonSecretKey();
         $expires = $this->_getExpiryTime();
 
         preg_match_all("/^http:\/\/(.*)\.s3\.amazonaws\.com\/(.*)$/", $url, $matches);
@@ -18,7 +18,7 @@ class Meanbee_DigitalDelivery_Helper_Data extends Mage_Core_Helper_Abstract {
             $string_to_sign = "GET\n\n\n$expires\n/" . $bucket[0] . "/" . $filename[0];
 
             $parameters =  array(
-                "AWSAccessKeyId" => Mage::helper('mbdd/config')->getAmazonAccessKey(),
+                "AWSAccessKeyId" => Mage::helper('S3QSA/config')->getAmazonAccessKey(),
                 "Expires"        => $expires,
                 "Signature"      => urlencode(base64_encode(hash_hmac('sha1', utf8_encode($string_to_sign), $secret, true)))
             );
@@ -38,7 +38,7 @@ class Meanbee_DigitalDelivery_Helper_Data extends Mage_Core_Helper_Abstract {
      * @return int
      */
     protected function _getExpiryTime() {
-        $expiry = Mage::helper('mbdd/config')->getAmazonRequestTimeout();
+        $expiry = Mage::helper('S3QSA/config')->getAmazonRequestTimeout();
 
         if ($expiry < 1) {
             $expiry = 1;

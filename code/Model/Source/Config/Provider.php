@@ -1,5 +1,5 @@
 <?php
-class Meanbee_DigitalDelivery_Model_Source_Config_Provider {
+class Meanbee_S3QSA_Model_Source_Config_Provider {
     protected $_providers = array(
         "aws" => "Amazon Web Services (AWS)"
     );
