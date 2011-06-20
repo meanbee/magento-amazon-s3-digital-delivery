@@ -1,7 +1,6 @@
 <?php
 class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
     const XML_GENERAL_ENABLED   = 's3qsa/general/enabled';
-    const XML_GENERAL_PROVIDER  = 's3qsa/general/provider';
 
     const XML_AMAZON_ACCESS     = 's3qsa/aws/access_key';
     const XML_AMAZON_SECRET     = 's3qsa/aws/secret_key';
@@ -15,15 +14,6 @@ class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
      */
     public function isEnabled() {
         return $this->_getStoreConfigFlag(self::XML_GENERAL_ENABLED);
-    }
-
-    /**
-     * The currently selected provider from the configuration dropdown
-     *
-     * @return string
-     */
-    public function getProvider() {
-        return $this->_getStoreConfig(self::XML_GENERAL_PROVIDER);
     }
 
     /**
