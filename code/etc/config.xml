@@ -1,27 +1,55 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <modules>
-        <Meanbee_DigitalDelivery>
+        <Meanbee_S3QSA>
             <version>1.0.0</version>
-        </Meanbee_DigitalDelivery>
+        </Meanbee_S3QSA>
     </modules>
     <global>
         <models>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Model</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Model</class>
+            </S3QSA>
         </models>
         <blocks>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Block</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Block</class>
+            </S3QSA>
         </blocks>
         <helpers>
-            <mbdd>
-                <class>Meanbee_DigitalDelivery_Helper</class>
-            </mbdd>
+            <S3QSA>
+                <class>Meanbee_S3QSA_Helper</class>
+            </S3QSA>
         </helpers>
+        <events>
+            <admin_system_config_changed_section_s3qsa>
+                <observers>
+                    <s3qsa_config_change>
+                        <type>singleton</type>
+                        <class>S3QSA/observer</class>
+                        <method>observeConfigChange</method>
+                    </s3qsa_config_change>
+                </observers>
+            </admin_system_config_changed_section_s3qsa>
+        </events>
+        <rewrite>
+            <mbdd_download>
+                <from><![CDATA[#^/downloadable/download/link/#]]></from>
+                <to>/s3qsa/download/link/</to>
+            </mbdd_download>
+        </rewrite>
     </global>
+    <frontend>
+        <routers>
+            <s3qsa_download>
+                <use>standard</use>
+                <args>
+                    <module>Meanbee_S3QSA</module>
+                    <frontName>s3qsa</frontName>
+                </args>
+            </s3qsa_download>
+        </routers>
+    </frontend>
     <adminhtml>
         <acl>
             <resources>
@@ -31,9 +59,9 @@
                             <children>
                                 <config>
                                     <children>
-                                        <mbdd>
-                                            <title>Meanbee Digital Delivery Settings</title>
-                                        </mbdd>
+                                        <s3qsa>
+                                            <title>Meanbee S3 Downloads Settings</title>
+                                        </s3qsa>
                                     </children>
                                 </config>
                             </children>
@@ -44,10 +72,20 @@
         </acl>
         <layout>
             <updates>
-                <mbdd>
-                    <file>meanbee/digitaldelivery.xml</file>
-                </mbdd>
+                <s3qsa>
+                    <file>meanbee/s3qsa.xml</file>
+                </s3qsa>
             </updates>
         </layout>
     </adminhtml>
+    <default>
+        <s3qsa>
+            <general>
+                <enabled>0</enabled>
+            </general>
+            <aws>
+                <request_timeout>300</request_timeout>
+            </aws>
+        </s3qsa>
+    </default>
 </config>

@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
 <config>
     <modules>
-        <Meanbee_DigitalDelivery>
+        <Meanbee_S3QSA>
             <active>true</active>
             <codePool>community</codePool>
             <depends>
-                <Mage_Sales />
+                <Mage_Downloadable />
             </depends>
-        </Meanbee_DigitalDelivery>
+        </Meanbee_S3QSA>
     </modules>
 </config>

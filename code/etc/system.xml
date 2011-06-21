@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <config>
     <sections>
-        <mbdd translate="label" module="mbdd">
-            <label>Meanbee: Digital Delivery</label>
+        <s3qsa translate="label" module="S3QSA">
+            <label>Meanbee: S3 Downloads</label>
             <tab>sales</tab>
             <frontend_type>text</frontend_type>
             <sort_order>9000</sort_order>
@@ -10,7 +10,7 @@
             <show_in_website>1</show_in_website>
             <show_in_store>1</show_in_store>
             <groups>
-                <general translate="label">
+                <general translate="label" module="S3QSA">
                     <label>General Options</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>10</sort_order>
@@ -18,29 +18,19 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <enabled translate="label">
-                            <label>Enable Digital Delivery?</label>
+                        <enabled translate="label" module="S3QSA">
+                            <label>Enable Amazon S3 Query String Authentication?</label>
                             <frontend_type>select</frontend_type>
                             <source_model>adminhtml/system_config_source_yesno</source_model>
                             <sort_order>10</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment>If you disable digital delivery, this module will not be used to provide your customers with links to the available content.</comment>
+                            <comment>If you disable S3 QSA, this module will be completely disabled and not be used to protected your S3 assets, nor conserve your bandwidth by redirecting your customers to the Amazon servers, for downloadable products.</comment>
                         </enabled>
-                        <provider>
-                            <label>Third-party Service</label>
-                            <frontend_type>select</frontend_type>
-                            <source_model>mbdd/source_config_provider</source_model>
-                            <sort_order>20</sort_order>
-                            <show_in_default>1</show_in_default>
-                            <show_in_website>1</show_in_website>
-                            <show_in_store>1</show_in_store>
-                            <comment>On what platform are your files hosted?  We'll use this to decide which of the configuration options below to follow.</comment>
-                        </provider>
                     </fields>
                 </general>
-                <aws translate="label">
+                <aws translate="label" module="S3QSA">
                     <label>Amazon Web Services (AWS) Options</label>
                     <frontend_type>text</frontend_type>
                     <sort_order>20</sort_order>
@@ -48,7 +38,7 @@
                     <show_in_website>1</show_in_website>
                     <show_in_store>1</show_in_store>
                     <fields>
-                        <access_key translate="label">
+                        <access_key translate="label" module="S3QSA">
                             <label>Access Key</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>10</sort_order>
@@ -57,7 +47,7 @@
                             <show_in_store>1</show_in_store>
                             <comment>Your Access Key ID identifies you as the party responsible for service requests.</comment>
                         </access_key>
-                        <secret_key translate="label">
+                        <secret_key translate="label" module="S3QSA">
                             <label>Secret Key</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>20</sort_order>
@@ -66,18 +56,18 @@
                             <show_in_store>1</show_in_store>
                             <comment>Each Access Key ID has a Secret Access Key associated with it. This key is just a long string of characters that you use to calculate the digitalsignature that you include in the request.</comment>
                         </secret_key>
-                        <urls translate="label">
-                            <label>Amazon URLs</label>
+                        <request_timeout translate="label" module="S3QSA">
+                            <label>Request Timeout</label>
                             <frontend_type>text</frontend_type>
                             <sort_order>30</sort_order>
                             <show_in_default>1</show_in_default>
                             <show_in_website>1</show_in_website>
                             <show_in_store>1</show_in_store>
-                            <comment><![CDATA[A comma-separated list of hostnames used for hosting files at amazon.  For example, <tt>http://cdn.meanbee.com/products/myfile.mov</tt> would require <tt>cdn.meanbee.com</tt> above.]]></comment>
-                        </urls>
+                            <comment>A brand spankin' new URL is used every time someone wants to download a file hosted in one of your S3 buckets.  This URL is time sensitive.  This value provides the number of seconds for which the URL is valid.</comment>
+                        </request_timeout>
                     </fields>
                 </aws>
             </groups>
-        </mbdd>
+        </s3qsa>
     </sections>
 </config>
