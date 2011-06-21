@@ -2,7 +2,8 @@
 <layout version="0.1.0">
     <adminhtml_catalog_product_downloadable>
         <reference name="js">
-            <block type="mbdd/adminhtml_product_edit_js" name="mbdd.product.edit.js" template="meanbee/digitaldelivery/product_edit_js.phtml" ifconfig="s3qsa/general/enabled" />
+            <block type="S3QSA/adminhtml_product_edit_js" name="mbdd.product.edit.js" template="meanbee/s3qsa/product_edit_js.phtml" ifconfig="s3qsa/general/enabled" />
         </reference>
     </adminhtml_catalog_product_downloadable>
 </layout>
+
