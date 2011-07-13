@@ -86,6 +86,9 @@
             <aws>
                 <request_timeout>300</request_timeout>
             </aws>
+            <developer>
+                <log_enabled>0</log_enabled>
+            </developer>
         </s3qsa>
     </default>
 </config>

@@ -7,6 +7,8 @@ class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
     const XML_AMAZON_URLS       = 's3qsa/aws/urls';
     const XML_AMAZON_TIMEOUT    = 's3qsa/aws/request_timeout';
 
+    const XML_DEVELOPER_LOG_ENABLED  = 's3qsa/developer/log_enabled';
+
     /**
      * Is the complete module enabled
      *
@@ -50,8 +52,25 @@ class Meanbee_S3QSA_Helper_Config extends Mage_Core_Helper_Abstract {
         return array();
     }
 
+    /**
+     * @return string
+     */
     public function getAmazonRequestTimeout() {
         return $this->_getStoreConfig(self::XML_AMAZON_TIMEOUT);
+    }
+
+    /**
+     * @return string
+     */
+    public function getLogLocation() {
+        return "meanbee_s3qsa.log";
+    }
+
+    /**
+     * @return bool
+     */
+    public function isLogEnabled() {
+        return $this->_getStoreConfigFlag(self::XML_DEVELOPER_LOG_ENABLED);
     }
 
     /**
