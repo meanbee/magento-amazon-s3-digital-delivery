@@ -11,18 +11,35 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
 
                     $protected_url = $s3->generateSecureUrl($url);
 
-                    $this->getResponse()
-                    ->setHttpResponseCode(301)
-                    ->setHeader("Location", $protected_url);
+                    if ($protected_url !== false) {
 
-                    $this->getResponse()->clearBody();
-                    $this->getResponse()->sendHeaders();
+                        $this->_log("Generated protected URL for $url: $protected_url");
 
-                    return;
+                        $this->getResponse()
+                            // Temporary redirect to avoid caching
+                            ->setHttpResponseCode(307)
+                            ->setHeader("Location", $protected_url);
+
+                        $this->getResponse()->clearBody();
+                        $this->getResponse()->sendHeaders();
+
+                        return;
+                    } else {
+                        $this->_log("Unable to generate protected URL from $url");
+                    }
                 }
             }
         }
 
         return parent::_processDownload($url, $resourceType);
+    }
+
+    protected function _log($message, $level = Zend_Log::DEBUG) {
+        /** @var $config Meanbee_S3QSA_Helper_Config */
+        $config = Mage::helper('S3QSA/config');
+
+        if ($config->isLogEnabled()) {
+           Mage::log("[meanbee_s3qsa] $message", $level, $config->getLogLocation());
+        }
     }
 }
