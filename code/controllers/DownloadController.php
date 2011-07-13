@@ -11,14 +11,21 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
 
                     $protected_url = $s3->generateSecureUrl($url);
 
-                    $this->getResponse()
-                    ->setHttpResponseCode(301)
-                    ->setHeader("Location", $protected_url);
+                    if ($protected_url !== false) {
 
-                    $this->getResponse()->clearBody();
-                    $this->getResponse()->sendHeaders();
+                        $this->_log("Generated protected URL for $url: $protected_url");
 
-                    return;
+                        $this->getResponse()
+                            ->setHttpResponseCode(301)
+                            ->setHeader("Location", $protected_url);
+
+                        $this->getResponse()->clearBody();
+                        $this->getResponse()->sendHeaders();
+
+                        return;
+                    } else {
+                        $this->_log("Unable to generate protected URL from $url");
+                    }
                 }
             }
         }
