@@ -16,7 +16,8 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
                         $this->_log("Generated protected URL for $url: $protected_url");
 
                         $this->getResponse()
-                            ->setHttpResponseCode(301)
+                            // Temporary redirect to avoid caching
+                            ->setHttpResponseCode(307)
                             ->setHeader("Location", $protected_url);
 
                         $this->getResponse()->clearBody();
