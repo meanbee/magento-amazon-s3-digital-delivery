@@ -1,9 +1,9 @@
 <?php
 class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
     public function isRelevantUrl($url) {
-        preg_match_all("/^http:\/\/(.*\.)s3\.amazonaws\.com\/(.*)$/", $url, $matches);
+        preg_match_all("/^https?:\/\/.*\.amazonaws\.com\/(.*)$/", $url, $matches);
 
-        return count($matches) > 0;
+        return $matches && count($matches) > 0 && count($matches[0]) > 0;
     }
 
     public function generateSecureUrl($url) {
@@ -20,7 +20,7 @@ class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
     }
 
     protected function _tryBucketSubdomain($url, $secret, $expires) {
-        preg_match_all("/^http:\/\/(.*)\.s3\.amazonaws\.com\/(.*)$/", $url, $matches);
+        preg_match_all("/^https?:\/\/(.*)\.s3\.amazonaws\.com\/(.*)$/", $url, $matches);
 
         if ($matches && count($matches) > 0 && count($matches[0]) > 0) {
             list($full_url, $bucket, $filename) = $matches;
@@ -42,7 +42,7 @@ class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
     }
 
     protected function _tryBucketRequestPath($url, $secret, $expires) {
-        preg_match_all("/^http:\/\/s3\.amazonaws\.com\/(.*)$/", $url, $matches);
+        preg_match_all("/^https?:\/\/.*\.amazonaws\.com\/(.*)$/", $url, $matches);
 
         if ($matches && count($matches) > 0 && count($matches[0]) > 0) {
             list($full_url, $filename) = $matches;
