@@ -1,99 +1,18 @@
-<_>
-   <form_key>4f4xKh0Nb3Zu2IgW</form_key>
-   <name>Meanbee_S3QSA</name>
-   <channel>community</channel>
-   <version_ids>
-      <version_ids>2</version_ids>
-   </version_ids>
-   <summary>Offload your bandwidth bills to Amazon S3 and protect your assets.</summary>
-   <description>Offload your bandwidth bills to Amazon S3 and protect your assets.</description>
-   <license>Commercial License</license>
-   <license_uri/>
-   <version>1.1.0</version>
-   <stability>stable</stability>
-   <notes>Added support for bucket names that are included as part of the request path, and not as the subdomain.</notes>
-   <authors>
-      <name>
-         <name>Nick Jones</name>
-      </name>
-      <user>
-         <user>meanbee</user>
-      </user>
-      <email>
-         <email>nick.jones@meanbee.com</email>
-      </email>
-   </authors>
-   <depends_php_min>5.2.0</depends_php_min>
-   <depends_php_max>6.0.0</depends_php_max>
-   <depends>
-      <package>
-         <name>
-            <name/>
-         </name>
-         <channel>
-            <channel/>
-         </channel>
-         <min>
-            <min/>
-         </min>
-         <max>
-            <max/>
-         </max>
-         <files>
-            <files>            </files>
-         </files>
-      </package>
-      <extension>
-         <name>
-            <name>Core</name>
-         </name>
-         <min>
-            <min/>
-         </min>
-         <max>
-            <max/>
-         </max>
-      </extension>
-   </depends>
-   <contents>
-      <target>
-         <target>magelocal</target>
-         <target>magecommunity</target>
-         <target>magedesign</target>
-         <target>magedesign</target>
-         <target>mageetc</target>
-      </target>
-      <path>
-         <path/>
-         <path>Meanbee/S3QSA</path>
-         <path>adminhtml/default/default/layout/meanbee</path>
-         <path>adminhtml/default/default/template/meanbee</path>
-         <path>modules/Meanbee_S3QSA.xml</path>
-      </path>
-      <type>
-         <type>file</type>
-         <type>dir</type>
-         <type>dir</type>
-         <type>dir</type>
-         <type>file</type>
-      </type>
-      <include>
-         <include/>
-         <include/>
-         <include/>
-         <include/>
-         <include/>
-      </include>
-      <ignore>
-         <ignore/>
-         <ignore/>
-         <ignore/>
-         <ignore/>
-         <ignore/>
-      </ignore>
-   </contents>
-   <page>1</page>
-   <limit>200</limit>
-   <folder/>
-   <package/>
-</_>
+<?xml version="1.0"?>
+<package>
+    <name>Meanbee_S3QSA</name>
+    <version>1.2.0</version>
+    <stability>stable</stability>
+    <license>Commercial License</license>
+    <channel>community</channel>
+    <extends/>
+    <summary>Offload your bandwidth bills to Amazon S3 and protect your assets.</summary>
+    <description>Offload your bandwidth bills to Amazon S3 and protect your assets.</description>
+    <notes>Relax the checking on AWS S3 URLs to allow Irish buckets, for example.</notes>
+    <authors><author><name>Nick Jones</name><user>meanbee</user><email>nick.jones@meanbee.com</email></author></authors>
+    <date>2011-07-21</date>
+    <time>17:53:47</time>
+    <contents><target name="magecommunity"><dir name="Meanbee"><dir name="S3QSA"><dir name="Block"><dir name="Adminhtml"><dir name="Product"><dir name="Edit"><file name="Js.php" hash="a7b8048f9300d6c3d3d05e5248fcef68"/></dir></dir></dir></dir><dir name="Helper"><file name="Config.php" hash="c97277bdb347bb12e0818e5443eed3c5"/><file name="Data.php" hash="cd3515694adaa22ac210c62db361f0e7"/><file name="S3.php" hash="369d3b02cdac64613b55eb721f8934d5"/></dir><dir name="Model"><file name="Observer.php" hash="3e72369bf6cdac57ced9197847a93acf"/></dir><dir name="controllers"><file name="DownloadController.php" hash="0a04e631691c9bf0df3213d326a2aa47"/></dir><dir name="etc"><file name="config.xml" hash="171499305060d82cc930ad855bb9392a"/><file name="system.xml" hash="0d7e1dd7ef745f5476c1c0b5a82a463c"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="meanbee"><file name="s3qsa.xml" hash="0e1a3bdf13f17d4353726c282da10afb"/></dir></dir><dir name="template"><dir name="meanbee"><dir name="s3qsa"><file name="product_edit_js.phtml" hash="0f230a87d14e538b41f722665727bc36"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Meanbee_S3QSA.xml" hash="70542cc74b6c82e44ac21aa6a7468eee"/></dir></target></contents>
+    <compatible/>
+    <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
+</package>
