@@ -42,7 +42,7 @@ class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
     }
 
     protected function _tryBucketRequestPath($url, $secret, $expires) {
-        preg_match_all("/^http:\/\/s3\.amazonaws\.com\/(.*)$/", $url, $matches);
+        preg_match_all("/^http://s3[\w-]*\.amazonaws\.com/(.*)$/", $url, $matches);
 
         if ($matches && count($matches) > 0 && count($matches[0]) > 0) {
             list($full_url, $filename) = $matches;
