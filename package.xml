@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <package>
     <name>Meanbee_S3QSA</name>
-    <version>1.2.0</version>
+    <version>1.2.1</version>
     <stability>stable</stability>
     <license>Commercial License</license>
     <channel>community</channel>
     <extends/>
     <summary>Offload your bandwidth bills to Amazon S3 and protect your assets.</summary>
     <description>Offload your bandwidth bills to Amazon S3 and protect your assets.</description>
-    <notes>Relax the checking on AWS S3 URLs to allow Irish buckets, for example.</notes>
+    <notes>Bucket could still be in the URL when using an s3[\w-]+ url.</notes>
     <authors><author><name>Nick Jones</name><user>meanbee</user><email>nick.jones@meanbee.com</email></author></authors>
-    <date>2011-07-21</date>
-    <time>17:53:47</time>
-    <contents><target name="magecommunity"><dir name="Meanbee"><dir name="S3QSA"><dir name="Block"><dir name="Adminhtml"><dir name="Product"><dir name="Edit"><file name="Js.php" hash="a7b8048f9300d6c3d3d05e5248fcef68"/></dir></dir></dir></dir><dir name="Helper"><file name="Config.php" hash="c97277bdb347bb12e0818e5443eed3c5"/><file name="Data.php" hash="cd3515694adaa22ac210c62db361f0e7"/><file name="S3.php" hash="369d3b02cdac64613b55eb721f8934d5"/></dir><dir name="Model"><file name="Observer.php" hash="3e72369bf6cdac57ced9197847a93acf"/></dir><dir name="controllers"><file name="DownloadController.php" hash="0a04e631691c9bf0df3213d326a2aa47"/></dir><dir name="etc"><file name="config.xml" hash="171499305060d82cc930ad855bb9392a"/><file name="system.xml" hash="0d7e1dd7ef745f5476c1c0b5a82a463c"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="meanbee"><file name="s3qsa.xml" hash="0e1a3bdf13f17d4353726c282da10afb"/></dir></dir><dir name="template"><dir name="meanbee"><dir name="s3qsa"><file name="product_edit_js.phtml" hash="0f230a87d14e538b41f722665727bc36"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Meanbee_S3QSA.xml" hash="70542cc74b6c82e44ac21aa6a7468eee"/></dir></target></contents>
+    <date>2011-08-08</date>
+    <time>08:01:11</time>
+    <contents><target name="magecommunity"><dir name="Meanbee"><dir name="S3QSA"><dir name="Block"><dir name="Adminhtml"><dir name="Product"><dir name="Edit"><file name="Js.php" hash="a7b8048f9300d6c3d3d05e5248fcef68"/></dir></dir></dir></dir><dir name="Helper"><file name="Config.php" hash="c97277bdb347bb12e0818e5443eed3c5"/><file name="Data.php" hash="cd3515694adaa22ac210c62db361f0e7"/><file name="S3.php" hash="27cc0dd938a05916eab928631431b304"/></dir><dir name="Model"><file name="Observer.php" hash="3e72369bf6cdac57ced9197847a93acf"/></dir><dir name="controllers"><file name="DownloadController.php" hash="0a04e631691c9bf0df3213d326a2aa47"/></dir><dir name="etc"><file name="config.xml" hash="70ade04f204d715fcae0c2fac98f658f"/><file name="system.xml" hash="0d7e1dd7ef745f5476c1c0b5a82a463c"/></dir></dir></dir></target><target name="magedesign"><dir name="adminhtml"><dir name="default"><dir name="default"><dir name="layout"><dir name="meanbee"><file name="afftrack.xml" hash="1a9d190cf0e3d167d6728628e0a9df6d"/><file name="deals.xml" hash="a4120f33d70e463422aa2fa0f939ab45"/><file name="s3qsa.xml" hash="0e1a3bdf13f17d4353726c282da10afb"/></dir></dir><dir name="template"><dir name="meanbee"><dir name="afftrack"><file name="affiliate_value_js.phtml" hash="34f24de75808bb7b99a0d70686420f94"/></dir><dir name="s3qsa"><file name="product_edit_js.phtml" hash="44b997ac1828a6a8481432649e417735"/></dir></dir></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="Meanbee_S3QSA.xml" hash="70542cc74b6c82e44ac21aa6a7468eee"/></dir></target></contents>
     <compatible/>
     <dependencies><required><php><min>5.2.0</min><max>6.0.0</max></php></required></dependencies>
 </package>
