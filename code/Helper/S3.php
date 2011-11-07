@@ -92,11 +92,6 @@ class Meanbee_S3QSA_Helper_S3 extends Mage_Core_Helper_Abstract {
     }
 
     protected function _log($message, $level = Zend_Log::DEBUG) {
-        /** @var $config Meanbee_S3QSA_Helper_Config */
-        $config = Mage::helper('S3QSA/config');
-
-        if ($config->isLogEnabled()) {
-           Mage::log("[meanbee_s3qsa] $message", $level, $config->getLogLocation());
-        }
+        Mage::helper('S3QSA')->log($message, $level);
     }
 }

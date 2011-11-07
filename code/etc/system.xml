@@ -83,7 +83,7 @@
                             <show_in_default>1</show_in_default>
                             <show_in_website>0</show_in_website>
                             <show_in_store>0</show_in_store>
-                            <comment><![CDATA[<i>If enabled</i>, all log messages will be written to a dedicated file in the <tt>var/log</tt> directory.]]></comment>
+                            <comment><![CDATA[<i>If enabled</i>, log messages will be forced, regardless of whether logging is enabled globally.  Logs are written to a dedicated file in the <tt>var/log</tt> directory.]]></comment>
                         </log_enabled>
                     </fields>
                 </developer>

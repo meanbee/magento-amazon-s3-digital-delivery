@@ -2,6 +2,8 @@
 require_once "Mage/Downloadable/controllers/DownloadController.php";
 class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadController {
     protected function _processDownload($url, $resourceType) {
+        $this->_log("Entering _processDownload()");
+        
         $config = Mage::helper('S3QSA/config');
         $s3     = Mage::helper('S3QSA/S3');
 
@@ -27,6 +29,8 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
                     } else {
                         $this->_log("Unable to generate protected URL from $url");
                     }
+                } else {
+                    $this->_log("Not intercepting the $url, as it's not an S3 URL");
                 }
             } else {
                 $this->_log("Not intercepting the $url to download as it's not a remote file!");
@@ -39,11 +43,6 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
     }
 
     protected function _log($message, $level = Zend_Log::DEBUG) {
-        /** @var $config Meanbee_S3QSA_Helper_Config */
-        $config = Mage::helper('S3QSA/config');
-
-        if ($config->isLogEnabled()) {
-           Mage::log("[meanbee_s3qsa] $message", $level, $config->getLogLocation());
-        }
+        Mage::helper('S3QSA')->log($message, $level);
     }
 }
