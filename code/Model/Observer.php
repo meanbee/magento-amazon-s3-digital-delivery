@@ -21,9 +21,18 @@ class Meanbee_S3QSA_Model_Observer {
                 Mage::helper('S3QSA')->__("Logging is now enabled.")
             );
 
-            Mage::log("[meanbee_s3qsa] Logging is enabled.", Zend_Log::DEBUG, $config->getLogLocation());
+            $this->_log("Logging is enabled.");
         } else {
-            Mage::log("[meanbee_s3qsa] Logging is disabled.  A log message to tell you that logging is disabled.. ingenious, right?", Zend_Log::DEBUG, $config->getLogLocation());
+            $this->_log("Logging is disabled.  A log message to tell you that logging is disabled.. ingenious, right?");
+        }
+    }
+    
+    protected function _log($message, $level = Zend_Log::DEBUG) {
+        /** @var $config Meanbee_S3QSA_Helper_Config */
+        $config = Mage::helper('S3QSA/config');
+
+        if ($config->isLogEnabled()) {
+           Mage::log("[meanbee_s3qsa] $message", $level, $config->getLogLocation());
         }
     }
 }

@@ -28,7 +28,11 @@ class Meanbee_S3QSA_DownloadController extends Mage_Downloadable_DownloadControl
                         $this->_log("Unable to generate protected URL from $url");
                     }
                 }
+            } else {
+                $this->_log("Not intercepting the $url to download as it's not a remote file!");
             }
+        } else {
+            $this->_log("Not intercepting the $url download as we're either not enabled, or we're not fully configured");
         }
 
         return parent::_processDownload($url, $resourceType);
