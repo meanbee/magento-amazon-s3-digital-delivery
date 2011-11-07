@@ -34,8 +34,8 @@
         </events>
         <rewrite>
             <mbdd_download>
-                <from><![CDATA[#^/downloadable/download/link/#]]></from>
-                <to>/s3qsa/download/link/</to>
+                <from><![CDATA[#^/downloadable/download/#]]></from>
+                <to>/s3qsa/download/</to>
             </mbdd_download>
         </rewrite>
     </global>
